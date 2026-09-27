@@ -1,31 +1,16 @@
-import koloMee from "@/assets/kolo-mee.jpg";
-import sarawakLaksa from "@/assets/sarawak-laksa.jpg";
-import midinBelacan from "@/assets/midin-belacan.jpg";
-import ayamPansuh from "@/assets/ayam-pansuh.jpg";
-import kekLapis from "@/assets/kek-lapis.jpg";
-import tehCPeng from "@/assets/teh-c-peng.jpg";
+// Menu data shared by the home and menu pages.
+// Kept as a plain script (not JSON) so the site works when opened straight from disk.
 
-export type Dish = {
-  id: string;
-  name: string;
-  shortName?: string;
-  price: number;
-  description: string;
-  image: string;
-  alt: string;
-  tag?: string;
-};
-
-export const dishes: Dish[] = [
+var DISHES = [
   {
     id: "kolo-mee",
     name: "Kolo Mee",
     price: 7.5,
     description:
       "Springy egg noodles tossed in shallot oil with minced pork and char siu.",
-    image: koloMee,
+    image: "images/kolo-mee.jpg",
     alt: "A bowl of kolo mee with char siu slices and springy noodles",
-    tag: "House favourite",
+    tag: "House favourite"
   },
   {
     id: "sarawak-laksa",
@@ -33,9 +18,9 @@ export const dishes: Dish[] = [
     price: 9.0,
     description:
       "A sambal-and-coconut broth with prawns, shredded omelette and beehoon.",
-    image: sarawakLaksa,
+    image: "images/sarawak-laksa.jpg",
     alt: "A bowl of Sarawak laksa with prawns and beehoon",
-    tag: "Simmered slow",
+    tag: "Simmered slow"
   },
   {
     id: "midin-belacan",
@@ -43,8 +28,8 @@ export const dishes: Dish[] = [
     price: 8.0,
     description:
       "Wild jungle fern stir-fried with shrimp paste, garlic and bird's-eye chilli.",
-    image: midinBelacan,
-    alt: "Midin fern stir-fried with sambal in a wok",
+    image: "images/midin-belacan.jpg",
+    alt: "Midin fern stir-fried with sambal in a wok"
   },
   {
     id: "ayam-pansuh",
@@ -52,8 +37,8 @@ export const dishes: Dish[] = [
     price: 12.0,
     description:
       "Chicken slow-cooked in bamboo with lemongrass, tapioca leaves and ginger.",
-    image: ayamPansuh,
-    alt: "Chicken cooked in a bamboo tube with lemongrass",
+    image: "images/ayam-pansuh.jpg",
+    alt: "Chicken cooked in a bamboo tube with lemongrass"
   },
   {
     id: "kek-lapis",
@@ -62,9 +47,9 @@ export const dishes: Dish[] = [
     price: 4.5,
     description:
       "Hand-layered spiced butter cake, cut fresh from this morning's bake.",
-    image: kekLapis,
+    image: "images/kek-lapis.jpg",
     alt: "Colourful layered Sarawak kek lapis cake slices",
-    tag: "Baked today",
+    tag: "Baked today"
   },
   {
     id: "teh-c-peng",
@@ -72,9 +57,15 @@ export const dishes: Dish[] = [
     price: 3.5,
     description:
       "Iced tea with evaporated milk and a swirl of homemade gula apong syrup.",
-    image: tehCPeng,
-    alt: "Layered iced teh C peng in a glass",
-  },
+    image: "images/teh-c-peng.jpg",
+    alt: "Layered iced teh C peng in a glass"
+  }
 ];
 
-export const formatRM = (n: number) => `RM ${n.toFixed(2)}`;
+function formatRM(n) {
+  return "RM " + n.toFixed(2);
+}
+
+function displayName(dish) {
+  return dish.shortName || dish.name;
+}
