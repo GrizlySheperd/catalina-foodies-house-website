@@ -1,53 +1,71 @@
-// Contact page: validate the form and show a thank-you note.
-// There is no backend, so a valid submission only clears the form.
-$(function () {
-  var $form = $("#contact-form");
-  var $success = $("#form-success");
+// Contact page: check the form before it is "sent".
+// There is no server, so a valid message is not sent anywhere; the form is just cleared.
+
+// Shows (or clears) the red message under one field.
+function showError(field, message) {
+  var error = document.getElementById(field + "-error");
+  var input = document.getElementById(field);
+
+  error.textContent = message;
+  error.hidden = message === "";
+  input.setAttribute("aria-invalid", message === "" ? "false" : "true");
+}
+
+// ---------- JavaScript function 3: validate the form ----------
+// Checks every field. Returns true only if everything is filled in correctly.
+function validateForm() {
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var message = document.getElementById("message").value.trim();
+  var consent = document.getElementById("consent").checked;
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var isValid = true;
 
-  function showError(field, message) {
-    var $error = $("#" + field + "-error");
-    var $input = $("#" + field);
-
-    $error.text(message || "").prop("hidden", !message);
-    $input.attr("aria-invalid", message ? "true" : "false");
+  if (name === "") {
+    showError("name", "Please tell us your name.");
+    isValid = false;
+  } else {
+    showError("name", "");
   }
 
-  $form.on("submit", function (e) {
-    e.preventDefault();
+  if (email === "") {
+    showError("email", "We need an email to reply to.");
+    isValid = false;
+  } else if (!emailPattern.test(email)) {
+    showError("email", "That email doesn't look quite right.");
+    isValid = false;
+  } else {
+    showError("email", "");
+  }
 
-    var name = $.trim($("#name").val());
-    var email = $.trim($("#email").val());
-    var message = $.trim($("#message").val());
-    var valid = true;
+  if (message === "") {
+    showError("message", "Don't forget your message!");
+    isValid = false;
+  } else {
+    showError("message", "");
+  }
 
-    if (!name) {
-      showError("name", "Please tell us your name.");
-      valid = false;
-    } else {
-      showError("name");
-    }
+  if (!consent) {
+    showError("consent", "Please tick the box so we're allowed to reply to you.");
+    isValid = false;
+  } else {
+    showError("consent", "");
+  }
 
-    if (!email) {
-      showError("email", "We need an email to reply to.");
-      valid = false;
-    } else if (!emailPattern.test(email)) {
-      showError("email", "That email doesn't look quite right.");
-      valid = false;
-    } else {
-      showError("email");
-    }
+  return isValid;
+}
 
-    if (!message) {
-      showError("message", "Don't forget your message!");
-      valid = false;
-    } else {
-      showError("message");
-    }
+$(function () {
+  $("#contact-form").submit(function (e) {
+    e.preventDefault(); // stay on the page
 
-    $success.prop("hidden", !valid);
-    if (valid) {
-      $form[0].reset();
+    // jQuery hide(): remove any old success message first
+    $("#form-success").hide();
+
+    if (validateForm()) {
+      // jQuery fadeIn(): show the thank-you message
+      $("#form-success").fadeIn(400);
+      this.reset();
     }
   });
 });

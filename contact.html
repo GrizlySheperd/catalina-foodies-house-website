@@ -10,12 +10,13 @@
   <meta property="og:description" content="Visit us at 12 Carpenter Street, Kuching — open Tue–Sun, 7am to 2pm. Questions about a big order or catering? Send us a message.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <script>document.documentElement.className = "js";</script>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,12 +27,18 @@
         <span class="brand-name">Catalina Foodie's House</span>
       </a>
       <nav class="site-nav" aria-label="Main">
-        <a href="index.html" class="nav-pill">Home</a>
-        <a href="menu.html" class="nav-pill">Menu</a>
-        <a href="contact.html" class="nav-pill active d-none d-sm-block" aria-current="page">Contact</a>
+        <a href="index.html" class="nav-pill d-none d-sm-block">Home</a>
+        <a href="menu.html" class="nav-pill d-none d-sm-block">Menu</a>
+        <a href="contact.html" class="nav-pill d-none d-sm-block active" aria-current="page">Contact</a>
         <a href="menu.html" class="btn-brand">Order now</a>
+        <button type="button" class="menu-btn d-sm-none" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
       </nav>
     </div>
+    <nav class="mobile-menu d-sm-none" id="mobile-menu" aria-label="Mobile">
+      <a href="index.html" class="nav-pill">Home</a>
+      <a href="menu.html" class="nav-pill">Menu</a>
+      <a href="contact.html" class="nav-pill active" aria-current="page">Contact</a>
+    </nav>
   </header>
 
   <main>
@@ -99,9 +106,18 @@
                 <p class="field-error" id="message-error" hidden></p>
               </div>
               <div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="consent" aria-describedby="consent-error">
+                  <label class="form-check-label small" for="consent">
+                    I agree that Catalina Foodie's House may use my name and email only to reply to this message. It won't be shared with anyone else.
+                  </label>
+                </div>
+                <p class="field-error" id="consent-error" hidden></p>
+              </div>
+              <div>
                 <button type="submit" class="btn-brand btn-lg-brand submit-btn">Send message</button>
               </div>
-              <p class="form-success" id="form-success" role="status" hidden>
+              <p class="form-success" id="form-success" role="status">
                 Terima kasih! Your message is in — we'll get back to you soon.
               </p>
             </div>
@@ -118,7 +134,8 @@
     <p class="text-muted-brand" style="font-size: 0.75rem;">© 2026 Catalina Foodie's House · Kuching, Sarawak</p>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/vendor/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
 </body>
 </html>
