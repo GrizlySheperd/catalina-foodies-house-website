@@ -1,93 +1,141 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Today's Menu — Catalina Foodie's House</title>
-  <meta name="description" content="Kolo mee, Sarawak laksa, midin belacan, ayam pansuh, kek lapis and teh C peng. Tap Order to build your order — prices from RM 3.50.">
-  <meta name="author" content="Catalina Foodie's House">
-  <meta property="og:title" content="Today's Menu — Catalina Foodie's House">
-  <meta property="og:description" content="Kolo mee, Sarawak laksa, midin belacan, ayam pansuh, kek lapis and teh C peng. Tap Order to build your order.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <script>document.documentElement.className = "js";</script>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&display=swap">
+  <title>Catalina Foodie's House - Menu</title>
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-container">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">C</span>
-        <span class="brand-name">Catalina Foodie's House</span>
-      </a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html" class="nav-pill d-none d-sm-block">Home</a>
-        <a href="menu.html" class="nav-pill d-none d-sm-block active" aria-current="page">Menu</a>
-        <a href="contact.html" class="nav-pill d-none d-sm-block">Contact</a>
-        <a href="menu.html" class="btn-brand">Order now</a>
-        <button type="button" class="menu-btn d-sm-none" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
-      </nav>
-    </div>
-    <nav class="mobile-menu d-sm-none" id="mobile-menu" aria-label="Mobile">
-      <a href="index.html" class="nav-pill">Home</a>
-      <a href="menu.html" class="nav-pill active" aria-current="page">Menu</a>
-      <a href="contact.html" class="nav-pill">Contact</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="bg-soft">
-      <div class="site-container page-intro text-center">
-        <h1 class="page-title">Today's Menu</h1>
-        <p class="text-muted-brand mx-auto mt-3 mb-0" style="max-width: 36rem;">
-          Tap "Order" to add a dish — your total updates at the bottom of the screen.
-        </p>
-      </div>
-    </section>
-
-    <section class="site-container menu-grid-section">
-      <div class="row g-4" id="menu-grid"></div>
-    </section>
-
-    <!-- Order bar -->
-    <div class="order-bar">
-      <div class="order-bar-inner">
-        <ul class="order-list" id="order-list"></ul>
-        <button type="button" class="order-toggle" id="order-toggle" aria-controls="order-list" aria-expanded="false">
-          <span class="order-toggle-label" aria-live="polite">Your order is empty — tap Order on a dish</span>
-          <span class="order-toggle-hint"></span>
-        </button>
+  <!-- Navigation menu -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Catalina Foodie's House</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navLinks">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
+  </nav>
 
-    <!-- Order confirmation (shown by showOrderConfirmation() in js/menu.js) -->
-    <div class="confirm-overlay" id="order-confirm" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
-      <div class="confirm-card">
-        <p class="confirm-icon" aria-hidden="true">✓</p>
-        <h2 class="fs-3 fw-bold" id="confirm-title">Thank you for your order!</h2>
-        <p class="text-muted-brand mb-2" id="confirm-text"></p>
-        <p class="small text-muted-brand mb-4">This is a demo website, so no real order was sent.</p>
-        <button type="button" class="btn-brand btn-lg-brand" id="confirm-close">Back to menu</button>
+  <main class="container my-4">
+    <h1>Our Menu</h1>
+    <p>Click "Order" to add a dish. Your order is shown at the bottom of the page.</p>
+
+    <div class="row">
+
+      <div class="col-sm-6 col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="images/kolo-mee.jpg" class="card-img-top" alt="A bowl of kolo mee with char siu slices">
+          <div class="card-body">
+            <h5 class="card-title">Kolo Mee</h5>
+            <p class="card-text">Egg noodles tossed in shallot oil with minced pork and char siu.</p>
+            <p class="price">RM 7.50</p>
+            <button type="button" class="btn btn-success order-btn" data-name="Kolo Mee" data-price="7.50">Order</button>
+            <span class="added-msg">Added!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="images/sarawak-laksa.jpg" class="card-img-top" alt="A bowl of Sarawak laksa with prawns">
+          <div class="card-body">
+            <h5 class="card-title">Sarawak Laksa</h5>
+            <p class="card-text">Sambal and coconut soup with prawns, omelette and beehoon.</p>
+            <p class="price">RM 9.00</p>
+            <button type="button" class="btn btn-success order-btn" data-name="Sarawak Laksa" data-price="9.00">Order</button>
+            <span class="added-msg">Added!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="images/midin-belacan.jpg" class="card-img-top" alt="Midin fern stir-fried with sambal">
+          <div class="card-body">
+            <h5 class="card-title">Midin Belacan</h5>
+            <p class="card-text">Jungle fern stir-fried with shrimp paste, garlic and chilli.</p>
+            <p class="price">RM 8.00</p>
+            <button type="button" class="btn btn-success order-btn" data-name="Midin Belacan" data-price="8.00">Order</button>
+            <span class="added-msg">Added!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="images/ayam-pansuh.jpg" class="card-img-top" alt="Chicken cooked in a bamboo tube">
+          <div class="card-body">
+            <h5 class="card-title">Ayam Pansuh</h5>
+            <p class="card-text">Chicken cooked in bamboo with lemongrass and ginger.</p>
+            <p class="price">RM 12.00</p>
+            <button type="button" class="btn btn-success order-btn" data-name="Ayam Pansuh" data-price="12.00">Order</button>
+            <span class="added-msg">Added!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="images/kek-lapis.jpg" class="card-img-top" alt="Slices of colourful Sarawak layer cake">
+          <div class="card-body">
+            <h5 class="card-title">Kek Lapis (slice)</h5>
+            <p class="card-text">Sarawak layer cake, baked fresh every morning.</p>
+            <p class="price">RM 4.50</p>
+            <button type="button" class="btn btn-success order-btn" data-name="Kek Lapis (slice)" data-price="4.50">Order</button>
+            <span class="added-msg">Added!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="images/teh-c-peng.jpg" class="card-img-top" alt="A glass of iced teh C peng">
+          <div class="card-body">
+            <h5 class="card-title">Teh C Peng</h5>
+            <p class="card-text">Iced tea with evaporated milk and gula apong syrup.</p>
+            <p class="price">RM 3.50</p>
+            <button type="button" class="btn btn-success order-btn" data-name="Teh C Peng" data-price="3.50">Order</button>
+            <span class="added-msg">Added!</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Order confirmation message (shown after "Place Order") -->
+    <div class="alert alert-success" id="confirmMsg" role="status"></div>
+
+    <!-- Order box (slides down when the first dish is ordered) -->
+    <div class="card" id="orderBox">
+      <div class="card-body">
+        <h4>Your Order</h4>
+        <ul id="orderList"></ul>
+        <p><b>Items:</b> <span id="itemCount">0</span></p>
+        <p><b>Total: RM <span id="total">0.00</span></b></p>
+        <button type="button" class="btn btn-primary" id="placeOrderBtn">Place Order</button>
+        <button type="button" class="btn btn-secondary" id="clearBtn">Clear</button>
       </div>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <span class="brand-mark">C</span>
-    <p class="font-display fs-5 fw-semibold">Catalina Foodie's House</p>
-    <p class="small text-muted-brand">12 Carpenter Street, Kuching, Sarawak · Open Tue–Sun, 7am – 2pm</p>
-    <p class="text-muted-brand" style="font-size: 0.75rem;">© 2026 Catalina Foodie's House · Kuching, Sarawak</p>
+  <footer class="bg-dark text-white text-center p-3">
+    &copy; 2026 Catalina Foodie's House, Kuching, Sarawak
   </footer>
 
   <script src="js/vendor/jquery-3.7.1.min.js"></script>
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/menu-data.js"></script>
   <script src="js/menu.js"></script>
 </body>
 </html>

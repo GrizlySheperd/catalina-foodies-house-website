@@ -1,140 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us — Catalina Foodie's House</title>
-  <meta name="description" content="Visit us at 12 Carpenter Street, Kuching — open Tue–Sun, 7am to 2pm. Questions about a big order or catering? Send us a message.">
-  <meta name="author" content="Catalina Foodie's House">
-  <meta property="og:title" content="Contact Us — Catalina Foodie's House">
-  <meta property="og:description" content="Visit us at 12 Carpenter Street, Kuching — open Tue–Sun, 7am to 2pm. Questions about a big order or catering? Send us a message.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <script>document.documentElement.className = "js";</script>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&display=swap">
+  <title>Catalina Foodie's House - Contact</title>
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-container">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">C</span>
-        <span class="brand-name">Catalina Foodie's House</span>
-      </a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html" class="nav-pill d-none d-sm-block">Home</a>
-        <a href="menu.html" class="nav-pill d-none d-sm-block">Menu</a>
-        <a href="contact.html" class="nav-pill d-none d-sm-block active" aria-current="page">Contact</a>
-        <a href="menu.html" class="btn-brand">Order now</a>
-        <button type="button" class="menu-btn d-sm-none" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
-      </nav>
+
+  <!-- Navigation menu -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Catalina Foodie's House</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navLinks">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="mobile-menu d-sm-none" id="mobile-menu" aria-label="Mobile">
-      <a href="index.html" class="nav-pill">Home</a>
-      <a href="menu.html" class="nav-pill">Menu</a>
-      <a href="contact.html" class="nav-pill active" aria-current="page">Contact</a>
-    </nav>
-  </header>
+  </nav>
 
-  <main>
-    <section class="bg-soft">
-      <div class="site-container page-intro">
-        <h1 class="page-title">Get in touch</h1>
-        <p class="text-muted-brand mt-3 mb-0" style="max-width: 36rem;">
-          Questions about a big order or catering? Send us a message.
+  <main class="container my-4">
+    <h1>Contact Us</h1>
+
+    <div class="row">
+      <div class="col-md-5 mb-4">
+        <h4>Visit or call us</h4>
+        <p>
+          <b>Address:</b> 12 Carpenter Street, Kuching, Sarawak<br>
+          <b>Opening hours:</b> Tuesday to Sunday, 7am - 2pm (closed on Monday)<br>
+          <b>Phone:</b> +60 82-XXX XXX
         </p>
+        <p>For big orders or catering, please tell us at least one day before.</p>
       </div>
-    </section>
 
-    <section class="site-container contact-grid">
-      <div class="row g-5">
-        <div class="col-lg-5">
-          <h2 class="fs-3 fw-bold">Visit or call</h2>
-          <div class="d-flex flex-column gap-4 mt-4">
-            <div class="d-flex align-items-start gap-3">
-              <span class="info-icon" aria-hidden="true">🏠</span>
-              <div>
-                <p class="fw-semibold mb-0">Find us</p>
-                <p class="small text-muted-brand mb-0">12 Carpenter Street<br>Kuching, Sarawak</p>
-              </div>
-            </div>
-            <div class="d-flex align-items-start gap-3">
-              <span class="info-icon" aria-hidden="true">🕖</span>
-              <div>
-                <p class="fw-semibold mb-0">Opening hours</p>
-                <p class="small text-muted-brand mb-0">Open Tue–Sun, 7am – 2pm<br>Closed on Mondays</p>
-              </div>
-            </div>
-            <div class="d-flex align-items-start gap-3">
-              <span class="info-icon" aria-hidden="true">📞</span>
-              <div>
-                <p class="fw-semibold mb-0">Call us</p>
-                <p class="small text-muted-brand mb-0">+60 82-XXX XXX</p>
-              </div>
-            </div>
+      <div class="col-md-7">
+        <h4>Send us a message</h4>
+        <form id="contactForm" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name">
+            <div class="error" id="nameError"></div>
           </div>
-          <div class="catering-box mt-5">
-            <p class="font-display fs-5 fw-semibold mb-2">Big orders &amp; catering</p>
-            <p class="small text-muted-brand mb-0" style="line-height: 1.65;">
-              Planning a party or an office lunch? Give us at least a day's
-              notice and we'll have the bamboo steamer ready.
-            </p>
-          </div>
-        </div>
 
-        <div class="col-lg-7">
-          <form class="form-card" id="contact-form" novalidate>
-            <div class="d-flex flex-column gap-4">
-              <div>
-                <label for="name" class="form-label">Name</label>
-                <input id="name" type="text" class="form-control" placeholder="Your name" aria-describedby="name-error">
-                <p class="field-error" id="name-error" hidden></p>
-              </div>
-              <div>
-                <label for="email" class="form-label">Email</label>
-                <input id="email" type="email" class="form-control" placeholder="you@example.com" aria-describedby="email-error">
-                <p class="field-error" id="email-error" hidden></p>
-              </div>
-              <div>
-                <label for="message" class="form-label">Message</label>
-                <textarea id="message" rows="5" class="form-control" placeholder="Tell us what you have in mind…" aria-describedby="message-error"></textarea>
-                <p class="field-error" id="message-error" hidden></p>
-              </div>
-              <div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="consent" aria-describedby="consent-error">
-                  <label class="form-check-label small" for="consent">
-                    I agree that Catalina Foodie's House may use my name and email only to reply to this message. It won't be shared with anyone else.
-                  </label>
-                </div>
-                <p class="field-error" id="consent-error" hidden></p>
-              </div>
-              <div>
-                <button type="submit" class="btn-brand btn-lg-brand submit-btn">Send message</button>
-              </div>
-              <p class="form-success" id="form-success" role="status">
-                Terima kasih! Your message is in — we'll get back to you soon.
-              </p>
-            </div>
-          </form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email">
+            <div class="error" id="emailError"></div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4"></textarea>
+            <div class="error" id="messageError"></div>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="consent">
+            <label class="form-check-label" for="consent">
+              I agree that my name and email will only be used to reply to this message.
+            </label>
+            <div class="error" id="consentError"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="alert alert-success mt-3" id="successMsg" role="status">
+          Thank you! Your message has been received.
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <span class="brand-mark">C</span>
-    <p class="font-display fs-5 fw-semibold">Catalina Foodie's House</p>
-    <p class="small text-muted-brand">12 Carpenter Street, Kuching, Sarawak · Open Tue–Sun, 7am – 2pm</p>
-    <p class="text-muted-brand" style="font-size: 0.75rem;">© 2026 Catalina Foodie's House · Kuching, Sarawak</p>
+  <footer class="bg-dark text-white text-center p-3">
+    &copy; 2026 Catalina Foodie's House, Kuching, Sarawak
   </footer>
 
   <script src="js/vendor/jquery-3.7.1.min.js"></script>
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
 </body>

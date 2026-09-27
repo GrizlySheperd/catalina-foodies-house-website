@@ -1,122 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Catalina Foodie's House — Sarawak comfort food in Kuching</title>
-  <meta name="description" content="Kolo mee tossed to order, laksa simmered the slow way, kek lapis cut fresh every morning. Browse today's menu and order from our family kitchen.">
-  <meta name="author" content="Catalina Foodie's House">
-  <meta property="og:title" content="Catalina Foodie's House — Real Sarawak flavours, no queue required">
-  <meta property="og:description" content="Kolo mee tossed to order, laksa simmered the slow way, kek lapis cut fresh every morning. Order from our family kitchen in Kuching.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <script>document.documentElement.className = "js";</script>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&display=swap">
+  <title>Catalina Foodie's House - Home</title>
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-container">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">C</span>
-        <span class="brand-name">Catalina Foodie's House</span>
-      </a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html" class="nav-pill d-none d-sm-block active" aria-current="page">Home</a>
-        <a href="menu.html" class="nav-pill d-none d-sm-block">Menu</a>
-        <a href="contact.html" class="nav-pill d-none d-sm-block">Contact</a>
-        <a href="menu.html" class="btn-brand">Order now</a>
-        <button type="button" class="menu-btn d-sm-none" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
-      </nav>
+
+  <!-- Navigation menu -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Catalina Foodie's House</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navLinks">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="mobile-menu d-sm-none" id="mobile-menu" aria-label="Mobile">
-      <a href="index.html" class="nav-pill active" aria-current="page">Home</a>
-      <a href="menu.html" class="nav-pill">Menu</a>
-      <a href="contact.html" class="nav-pill">Contact</a>
-    </nav>
-  </header>
+  </nav>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero grain">
-      <div class="site-container">
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-6">
-            <p class="badge-butter mb-3">Fresh from the wok, every morning</p>
-            <h1 class="hero-title">
-              Real Sarawak flavours,<br>
-              <span class="text-crust">no queue required.</span>
-            </h1>
-            <p class="lead-brand mt-4 mb-0" style="max-width: 32rem;">
-              Catalina Foodie's House brings the kopitiam stalls of Kuching to
-              your door — kolo mee tossed to order, laksa simmered the slow way,
-              and kek lapis cut fresh every morning.
-            </p>
-            <div class="d-flex flex-wrap align-items-center gap-3 mt-4 pt-2">
-              <a href="menu.html" class="btn-brand btn-lg-brand btn-lift">Order now</a>
-              <a href="menu.html" class="btn-brand-outline btn-lg-brand">View menu</a>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="position-relative">
-              <div class="hero-image">
-                <img src="images/hero-table.jpg" width="1920" height="1080"
-                  alt="A wooden kopitiam table with bowls of laksa and kolo mee, kek lapis slices and iced teh C peng">
-              </div>
-              <div class="hero-hours d-none d-sm-block">
-                <p class="font-display small fw-semibold mb-0">Open Tue–Sun · 7am – 2pm</p>
-                <p class="text-muted-brand mb-0" style="font-size: 0.75rem;">12 Carpenter Street, Kuching</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <main class="container my-4">
+    <h1>Welcome to Catalina Foodie's House</h1>
+    <p>
+      Real Sarawak food from our family kitchen in Kuching. We make kolo mee,
+      Sarawak laksa and kek lapis fresh every morning.
+    </p>
 
-    <!-- Story -->
-    <section class="bg-soft">
-      <div class="site-container section-pad">
-        <div style="max-width: 42rem;">
-          <h2 class="section-title">Started at a five-table stall on Carpenter Street</h2>
-          <p class="text-muted-brand mt-4 mb-0" style="line-height: 1.65;">
-            Catalina Foodie's House began in 2019 as a single stall run by two
-            sisters who grew up helping in their father's kopitiam. Today we
-            still make the noodles fresh each morning and only cook what we
-            expect to sell — no freezers, no shortcuts. Every order supports
-            the same family kitchen that started it all.
-          </p>
-        </div>
-      </div>
-    </section>
+    <img src="images/hero-table.jpg" class="img-fluid rounded" alt="A table with bowls of laksa and kolo mee, kek lapis slices and iced teh C peng">
 
-    <!-- Featured dishes -->
-    <section class="site-container section-pad">
-      <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-5">
-        <div>
-          <h2 class="section-title mb-2">Straight from the kitchen</h2>
-          <p class="text-muted-brand mb-0">A taste of today's menu — see the full spread on the menu page.</p>
-        </div>
-        <a href="menu.html" class="btn-brand-outline">See full menu →</a>
-      </div>
-      <div class="row g-4" id="featured-dishes"></div>
-    </section>
+    <p class="mt-3">
+      <b>Opening hours:</b> Tuesday to Sunday, 7am - 2pm<br>
+      <b>Address:</b> 12 Carpenter Street, Kuching, Sarawak
+    </p>
+
+    <a href="menu.html" class="btn btn-primary">View Menu</a>
+
+    <h2 class="mt-5">About Us</h2>
+    <button type="button" class="btn btn-outline-secondary" id="aboutBtn">Read our story</button>
+    <p class="mt-3" id="aboutText">
+      Catalina Foodie's House started in 2019 as a small stall run by two sisters
+      who grew up helping in their father's kopitiam. We still make our noodles
+      fresh every morning and only cook what we expect to sell.
+    </p>
   </main>
 
-  <footer class="site-footer">
-    <span class="brand-mark">C</span>
-    <p class="font-display fs-5 fw-semibold">Catalina Foodie's House</p>
-    <p class="small text-muted-brand">12 Carpenter Street, Kuching, Sarawak · Open Tue–Sun, 7am – 2pm</p>
-    <p class="text-muted-brand" style="font-size: 0.75rem;">© 2026 Catalina Foodie's House · Kuching, Sarawak</p>
+  <footer class="bg-dark text-white text-center p-3">
+    &copy; 2026 Catalina Foodie's House, Kuching, Sarawak
   </footer>
 
   <script src="js/vendor/jquery-3.7.1.min.js"></script>
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/menu-data.js"></script>
-  <script src="js/home.js"></script>
 </body>
 </html>
