@@ -221,6 +221,18 @@ a {
 
 .site-nav .btn-brand {
   margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+/* Keep the header on one row on narrow phones */
+@media (max-width: 419.98px) {
+  .site-header .site-container { gap: 0.5rem; padding-inline: 0.75rem; }
+  .brand { gap: 0.5rem; min-width: 0; }
+  .brand-mark { width: 2.25rem; height: 2.25rem; font-size: 1.125rem; }
+  .brand-name { font-size: 0.95rem; }
+  .site-nav { gap: 0; }
+  .site-nav .nav-pill { padding-inline: 0.5rem; }
+  .site-nav .btn-brand { margin-left: 0.25rem; padding-inline: 0.875rem; }
 }
 
 @media (min-width: 576px) {
