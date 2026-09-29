@@ -1,5 +1,49 @@
 /* My own styles (Bootstrap does most of the layout) */
 
+/* Pink bakery colours: soft pink page, deep pink bar, rose buttons */
+body {
+  background-color: #fff0f5;
+  color: #4a2c38;
+}
+
+h1,
+h2,
+h4,
+h5 {
+  color: #b03a6f;
+}
+
+.bg-bakery {
+  background-color: #d6478a;
+}
+
+.btn-bakery {
+  background-color: #e8679f;
+  border-color: #e8679f;
+  color: #ffffff;
+}
+
+.btn-bakery:hover {
+  background-color: #c9447f;
+  border-color: #c9447f;
+  color: #ffffff;
+}
+
+.btn-outline-bakery {
+  border-color: #d6478a;
+  color: #d6478a;
+}
+
+.btn-outline-bakery:hover {
+  background-color: #d6478a;
+  color: #ffffff;
+}
+
+.card {
+  background-color: #ffffff;
+  border-color: #f7c6da;
+}
+
 .card-img-top {
   height: 200px;
   object-fit: cover;
@@ -7,12 +51,13 @@
 
 .price {
   font-weight: bold;
-  color: green;
+  color: #c2306f;
 }
 
 /* Hidden at first, jQuery shows them */
 .added-msg,
 #orderBox,
+#addressBox,
 #confirmMsg,
 #successMsg,
 #aboutText {
@@ -20,7 +65,7 @@
 }
 
 .added-msg {
-  color: green;
+  color: #c2306f;
   margin-left: 10px;
 }
 
